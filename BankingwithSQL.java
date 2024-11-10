@@ -62,7 +62,7 @@ class BankingwithSQL{
    }
     protected  static void create(){
         try(Connection conn = DriverManager.getConnection(url,user,password)){
-            String sql = "INSERT INTO BankingSys values(?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO BankingSys values(?,?,?,?,?,?,?,?,?,?)"; //here '?' question marks work as a placehoder for value to be assigned letter
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
             String ch = "YES";
@@ -74,7 +74,7 @@ class BankingwithSQL{
             Random random = new Random();
             AccountNo = "1000000" + random.nextInt(0,100000);
             System.out.println("We will allot a Account number for you!!!");
-            pstmt.setString(1,AccountNo);
+            pstmt.setString(1,AccountNo); //This assign values to '?' in the command to be executed store in String sql,it take index of '?' as first then assign value that is store as seconf parameter
             
             System.out.print("Enter your Name:");
             name = scan.next().toUpperCase();
