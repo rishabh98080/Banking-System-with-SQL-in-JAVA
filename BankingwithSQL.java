@@ -62,7 +62,7 @@ class BankingwithSQL{
    }
     protected  static void create(){
         try(Connection conn = DriverManager.getConnection(url,user,password)){
-            String sql = "INSERT INTO BankingSys values(?,?,?,?,?,?,?,?,?,?)"; //here '?' question marks work as a placehoder for value to be assigned letter
+            String sql = "INSERT INTO BankingSys values(?,?,?,?,?,?,?,?,?,?)"; //here '?' question marks workas a placehoder for value to be assigned later
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
             String ch = "YES";
